@@ -2,32 +2,324 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* poppins-regular - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../assets/fonts/poppins-v21-latin-regular.woff2') format('woff2'),
+        /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url('../assets/fonts/poppins-v21-latin-regular.ttf') format('truetype');
+    /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* poppins-500 - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../assets/fonts/poppins-v21-latin-500.woff2') format('woff2'),
+        /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url('../assets/fonts/poppins-v21-latin-500.ttf') format('truetype');
+    /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* poppins-600 - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../assets/fonts/poppins-v21-latin-600.woff2') format('woff2'),
+        /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url('../assets/fonts/poppins-v21-latin-600.ttf') format('truetype');
+    /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* poppins-700 - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../assets/fonts/poppins-v21-latin-700.woff2') format('woff2'),
+        /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url('../assets/fonts/poppins-v21-latin-700.ttf') format('truetype');
+    /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+
+/* poppins-800 - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    src: url('../assets/fonts/poppins-v21-latin-800.woff2') format('woff2'),
+        /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url('../assets/fonts/poppins-v21-latin-800.ttf') format('truetype');
+    /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+
+/* poppins-900 - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    src: url('../assets/fonts/poppins-v21-latin-900.woff2') format('woff2'),
+        /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url('../assets/fonts/poppins-v21-latin-900.ttf') format('truetype');
+    /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.HeroBg {
+    background-image: url(../public/HeroBg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.swiperBg {
+    background-image: url(../public/CustomSwiperBg.png);
+    background-repeat: no-repeat;
+}
+
+.swiperBgTwo {
+    background-image: url(../public/CustomSwiperBgTwo.png);
+    background-repeat: no-repeat;
+    background-size: 404px 582px;
+}
+
+.swiperBgThree {
+    background-image: url(../public/CustomSwiperBgThree.png);
+    background-repeat: no-repeat;
+    background-size: 404px 582px;
+}
+
+.swiper-pagination-clickable {
+    display: flex !important;
+    justify-content: flex-end !important;
+    padding: 0 350px !important;
+    transform: translateY(-20px) !important;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #B88E2F !important;
+}
+
+.slider-arrow {
+    color: #B88E2F !important;
+}
+
+.custom-btn {
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+        7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
+    outline: none;
+}
+
+.btn-14 {
+    background: rgb(255, 255, 255);
+    z-index: 1;
+}
+
+.btn-14:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 5px;
+    background-color: #ffffff;
+    background-image: linear-gradient(315deg, #000000 0%, #000000 74%);
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5) 7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
+    transition: all 0.3s ease;
+}
+
+.btn-14:hover {
+    color: #000;
+}
+
+.btn-14:hover:after {
+    top: auto;
+    bottom: 0;
+    height: 100%;
+}
+
+.btn-14:active {
+    top: 2px;
+}
+
+.hoverEffectDiv {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.hoverEffectLi:hover .hoverEffectDiv {
+    opacity: 1;
+}
+
+.ShopPageBg {
+    background-image: url(../public/ShopPageBg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.ant-select-selector {
+    display: none !important;
+}
+
+.ant-pagination-next {
+    padding: 15px 27px !important;
+    background-color: #F9F1E7 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.ant-pagination-options {
+    display: none !important;
+    ;
+}
+
+.ant-pagination-item {
+    background-color: #F9F1E7 !important;
+}
+
+.ant-pagination-item-active {
+    background-color: #B88E2F !important;
+    border: none !important;
+}
+
+.ant-pagination-item-active a {
+    color: white !important;
+}
+
+.radio-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    font-size: 13px;
+}
+
+.radio-inputs .radio {
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.radio-inputs input {
+    display: none;
+}
+
+.radio-inputs .radio .name {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: all .15s ease-in-out;
+}
+
+.radio-inputs .radio input:checked+.name {
+    background-color: #B88E2F;
+    font-weight: 600;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 12px;
+}
+
+.radio-inputs>label {
+    background-color: #F9F1E7;
+    border-radius: 5px;
+}
+
+.color-radio {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.color-radio input:checked+span {
+    opacity: 0.7;
+    border: 4px solid green;
+}
+
+.color-radio span {
+    display: block;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+.color-radio .color-1 {
+    background-color: #816DFA;
+}
+
+.color-radio .color-2 {
+    background-color: #000;
+}
+
+.color-radio .color-3 {
+    background-color: #B88E2F;
+}
+
+.ant-drawer-close {
+    transform: translateX(285px);
+    width: 17px !important;
+    height: 19px !important;
+    background-image: url(../public/ModalCloseIcon.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+
+.ant-drawer-title {
+    font-size: 24px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    line-height: 36px;
+}
+
+.anticon-close {
+    display: none;
+}
+
+.ComparisionTitles {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    line-height: 126.5%;
+}
+
+input {
+    outline: none;
 }
